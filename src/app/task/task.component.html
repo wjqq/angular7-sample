@@ -1,0 +1,14 @@
+<ul>
+  <li *ngFor='let task of taskList'>
+    {{task.task}}
+  </li>
+</ul>
+<button (click)="AddTask(2,'another task')">Add another task</button>
+
+<p>{{message}}</p>
+
+<button (click)="createComponent('danger')">Create danger alert</button>
+
+<ng-template #alertContainer></ng-template>
+
+
