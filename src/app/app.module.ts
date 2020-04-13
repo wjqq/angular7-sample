@@ -12,6 +12,7 @@ import { TaskEffects } from './store/effects/task.effect';
 import { DynamicComponent } from './alter/alter.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AngularInterceptor} from './AngularInterceptor'
+import {TaskDetailComponent} from './task/detail/task-detail.component'
 
 let rootReducer={
   AppState:{TaskReducer}
@@ -20,6 +21,7 @@ let rootReducer={
 
 @NgModule({
   declarations: [
+    TaskDetailComponent,
     AppComponent,
     TaskComponent,
     DynamicComponent

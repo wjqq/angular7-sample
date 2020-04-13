@@ -8,3 +8,9 @@ task.component: Initiallly it load the first task, add a new task when you click
 alter.components(DynamicComponent): which will be present when you click the "create danger alert" in the page. it is generated dynamically.
 
 
+A Complete Guide To Routing In Angular
+https://www.smashingmagazine.com/2018/11/a-complete-guide-to-routing-in-angular/
+
+
+Styling An Angular Application With Bootstrap
+https://www.smashingmagazine.com/2019/02/angular-application-bootstrap/

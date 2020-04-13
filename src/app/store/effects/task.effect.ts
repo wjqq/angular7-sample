@@ -24,5 +24,4 @@ export class TaskEffects{
         public _service:TasksService
     ){  
     }
-    
 }

@@ -14,7 +14,7 @@ export function TaskReducer(
             return state;
             break;
         case TaskActionsType.AddNewTaskSuccess:
-            return [...state,action.payload];
+            return [...state, action.payload];
             break;
         case TaskActionsType.Failure:
             return state

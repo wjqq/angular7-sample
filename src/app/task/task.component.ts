@@ -24,17 +24,23 @@ export class TaskComponent implements OnInit {
       this.taskList=val['TaskReducer'];
     });
   }
-  AddTask(id:number,task:string){
-    this.store.dispatch({type:TaskActionsType.AddNewTask,payload:{id:id,task:task}});
+  AddTask(task:string){
+    this.store.dispatch({type:TaskActionsType.AddNewTask,payload:{task:task}});
   }
 
   createComponent(type: string) {
     this.container.clear();
-    const factory: ComponentFactory<DynamicComponent> =
-    this.resolver.resolveComponentFactory(DynamicComponent);
+    const factory: ComponentFactory<DynamicComponent> = this.resolver.resolveComponentFactory(DynamicComponent);
     this.componentRef = this.container.createComponent(factory);
+
+    //Pass type to the conponent created dynamically
     this.componentRef.instance.type = type;
-    this.componentRef.instance.output.subscribe((msg: string) => this.handleOutput(msg));
+
+    //Subscribe the data emit from child component
+    this.componentRef.instance.output.subscribe((msg: string) => {
+      console.log("receive event from child component"+ msg);
+      return this.handleOutput(msg);
+    });
    }
 
    handleOutput(msg: string){
