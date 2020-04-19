@@ -1,7 +1,21 @@
 <div class="container">
-  <div class="col-md-12">
-    <h1>This is home page of the App</h1>
-  </div>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
 
+      <!-- https://majing.io/posts/10000019031169 
+      
+        routerLink: link where to go when click the link
+        routerLinkActive: the class when the route is active
+        routerLinkActiveOptions: true when the route is exactly match the browser url.
+      -->
+
+      <a class="nav-link" routerLink='' routerLinkActive="red" [routerLinkActiveOptions]="{exact:
+        true}">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" a class="nav-link" routerLink='/student' routerLinkActive="red" [routerLinkActiveOptions]="{exact:
+        true}">Student</a>
+    </li>
+  </ul>
   <router-outlet></router-outlet>
 </div>
