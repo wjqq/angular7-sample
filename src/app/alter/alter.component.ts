@@ -1,4 +1,4 @@
-import { Component, OnInit , Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit , Input,Output,EventEmitter, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'app-alter',
@@ -7,7 +7,8 @@ import { Component, OnInit , Input,Output,EventEmitter} from '@angular/core';
 })
 export class DynamicComponent implements OnInit {
 
-  @Input() type: string = "success";
+  @Input() type: string;
+  @Input() count: number;
   @Output() output = new EventEmitter();
 
   constructor() { }
@@ -15,4 +16,8 @@ export class DynamicComponent implements OnInit {
   ngOnInit() {
   }
 
+  increase(){
+    this.count = this.count + 1;
+    this.output.next(this.count);
+  }
 }

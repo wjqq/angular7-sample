@@ -3,12 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import {TaskDetailComponent} from './task/detail/task-detail.component'
 import {TaskComponent} from './task/task.component'
 
+import { DynamicFactoryComponent } from './dynamic-factory/dynamic-factory.component'
+
 import { STUDENTS_ROUTES } from './student/student.routes'
 import {StudentModule} from './student/student.module'
 
 const routes: Routes = [
   { path: 'detail/:id', component: TaskDetailComponent },
   { path: '', component: TaskComponent },
+  { path: 'dynamic-factory', component: DynamicFactoryComponent},
 
   //https://medium.com/@shairez/angular-routing-a-better-pattern-for-large-scale-apps-f2890c952a18
   //,

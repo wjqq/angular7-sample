@@ -12,12 +12,12 @@ import {DynamicComponent} from '../alter/alter.component';
 })
 export class TaskComponent implements OnInit {
   public taskList:TaskState;
-  public message:string;
+  // public message:string;
 
-  componentRef: ComponentRef<DynamicComponent>;
+  // componentRef: ComponentRef<DynamicComponent>;
 
-  @ViewChild("alertContainer", { read: ViewContainerRef }) container: ViewContainerRef;
-  constructor(public store:Store<AppState>, private resolver: ComponentFactoryResolver) { }
+  // @ViewChild("alertContainer", { read: ViewContainerRef }) container: ViewContainerRef;
+ constructor(public store:Store<AppState>) { }
 
   ngOnInit() {
     this.store.select(x=>{return x}).subscribe(val=>{
@@ -27,23 +27,4 @@ export class TaskComponent implements OnInit {
   AddTask(task:string){
     this.store.dispatch({type:TaskActionsType.AddNewTask,payload:{task:task}});
   }
-
-  createComponent(type: string) {
-    this.container.clear();
-    const factory: ComponentFactory<DynamicComponent> = this.resolver.resolveComponentFactory(DynamicComponent);
-    this.componentRef = this.container.createComponent(factory);
-
-    //Pass type to the conponent created dynamically
-    this.componentRef.instance.type = type;
-
-    //Subscribe the data emit from child component
-    this.componentRef.instance.output.subscribe((msg: string) => {
-      console.log("receive event from child component"+ msg);
-      return this.handleOutput(msg);
-    });
-   }
-
-   handleOutput(msg: string){
-     this.message = msg;
-   }
 }

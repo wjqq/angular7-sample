@@ -1,2 +1,11 @@
-<h1 >Type: {{type}}</h1>
-<button (click)="output.next(type)">send type to parent component</button>
+<div class="col-md-5">
+    <div class="row">
+        <h6>Conponent: {{type}}, Count in sub-component: {{count}}</h6>
+    </div>
+</div>
+
+<div class="col-md-5">
+    <div class="row">
+        <button (click)="increase()">Increase Count</button>
+    </div>
+</div>

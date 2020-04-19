@@ -13,7 +13,8 @@ import { DynamicComponent } from './alter/alter.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AngularInterceptor} from './AngularInterceptor'
 import {TaskDetailComponent} from './task/detail/task-detail.component'
-import {StudentModule} from './student/student.module'
+import {StudentModule} from './student/student.module';
+import { DynamicFactoryComponent } from './dynamic-factory/dynamic-factory.component'
 
 
 let rootReducer={
@@ -26,7 +27,8 @@ let rootReducer={
     TaskDetailComponent,
     AppComponent,
     TaskComponent,
-    DynamicComponent
+    DynamicComponent,
+    DynamicFactoryComponent
   ],
   entryComponents: [DynamicComponent],
   imports: [

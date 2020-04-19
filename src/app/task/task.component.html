@@ -1,26 +1,25 @@
-<div class="col-md-12">
-  <table class="table table-primary table-hover">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Handle</th>
-        <th scope="col">Handle</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor='let task of taskList'>
-        <th scope="row">{{task.id}}</th>
-        <td>{{task.task}}</td>
-        <td> <a routerLink="/detail/{{task.id}}">view</a></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="col-md-2 add-task">
+  <div class="row">
+    <button (click)="AddTask('another task')">Add task</button>
+  </div>
 </div>
-
-<button (click)="AddTask('another task')">Add another task</button>
-
-<p>The message is get from Child Component: {{message}}</p>
-
-<button (click)="createComponent('danger')">Create danger alert</button>
-
-<ng-template #alertContainer></ng-template>
+<div class="col-md-12">
+  <div class="row">
+    <table class="table table-primary table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Handle</th>
+          <th scope="col">Handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let task of taskList'>
+          <th scope="row">{{task.id}}</th>
+          <td>{{task.task}}</td>
+          <td> <a routerLink="/detail/{{task.id}}">view</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
