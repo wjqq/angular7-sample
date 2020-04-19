@@ -13,6 +13,8 @@ import { DynamicComponent } from './alter/alter.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {AngularInterceptor} from './AngularInterceptor'
 import {TaskDetailComponent} from './task/detail/task-detail.component'
+import {StudentModule} from './student/student.module'
+
 
 let rootReducer={
   AppState:{TaskReducer}
@@ -32,7 +34,9 @@ let rootReducer={
     AppRoutingModule,
     StoreModule.forRoot(rootReducer.AppState),
     EffectsModule.forRoot([TaskEffects]),
-    HttpClientModule
+    HttpClientModule,
+    //option 1: route load eager
+    //StudentModule,
   ],
   providers: [TasksService,
     { provide: HTTP_INTERCEPTORS, useClass: AngularInterceptor, multi: true }],
